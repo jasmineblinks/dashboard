@@ -1,0 +1,98 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+#app {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background:#dcdcdc;
+
+    >nav {
+        height: 100px;
+       
+
+        >.container {
+            height: 100%;
+            width: 100%;
+        }
+        header{
+            background-color: #f5f5f5	;
+             width: calc(100% - 56px);
+            position: absolute;
+            z-index: 1;
+            padding: 28px;
+            font-size: 20px;
+            font-weight: bolder;
+            text-align: center;
+            
+        }
+    }
+    
+
+    >main {
+        height: calc(100% - 250px);
+        width: 100%;
+
+        >.container {
+            height: 100%;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: 600;
+
+        }
+    }
+
+    >aside {
+    
+    
+        height: 100%;
+  width: 60px;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  background-color: #e8e9eb;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+        >.container {
+            height: 100%;
+            // width: calc(60px-30px);
+
+
+            > .fa{
+                background-color:#140c0c;
+                // color:#666d7a;
+                margin: 15px;            
+                color: #f4f4fc;
+                padding: 3px;
+                font-size: 20px;
+                
+            }
+            // >ul{
+            //     list-style: none;
+            // }
+        }
+
+        
+       
+    }
+    
+    
+}
+
+.container {
+    margin: auto;
+
+    @media screen and (min-width: 1200px) {
+        width: 900px;
+    }
+}

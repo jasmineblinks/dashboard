@@ -1,0 +1,84 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+#app {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background: #dcdcdc;
+}
+
+#app > nav {
+  height: 100px;
+}
+
+#app > nav > .container {
+  height: 100%;
+  width: 100%;
+}
+
+#app > nav header {
+  background-color: #f5f5f5;
+  width: calc(100% - 56px);
+  position: absolute;
+  z-index: 1;
+  padding: 28px;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#app > main {
+  height: calc(100% - 250px);
+  width: 100%;
+}
+
+#app > main > .container {
+  height: 100%;
+}
+
+#app > main .title {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+#app > aside {
+  height: 100%;
+  width: 60px;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  background-color: #e8e9eb;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+#app > aside > .container {
+  height: 100%;
+}
+
+#app > aside > .container > .fa {
+  background-color: #140c0c;
+  margin: 15px;
+  color: #f4f4fc;
+  padding: 3px;
+  font-size: 20px;
+}
+
+.container {
+  margin: auto;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 900px;
+  }
+}
+/*# sourceMappingURL=custom.css.map */
