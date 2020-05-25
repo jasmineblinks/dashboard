@@ -16,32 +16,21 @@
             </div>
         </nav>
         <main>
-            <div class="container">
-                <div>
-                    <h1 class="title"></h1>
-                    <h3 class="sub-title"></h3>
-
-                    <!-- <div><button class="btn-white"></button>
-                        <button class="btn-white"></button>
-                        <button class="btn-white"></button>
-                        <button class="btn-white"></button>
-                    </div> -->
-                </div>
-                <div></div>
+            <div id="white-space" class="container" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+                
             </div>
         </main>
         <aside>
             
             <div class="container">
-                
-                
-                <i class="fa fa-clipboard-list"></i><br>
-                <i class="fa fa-link"></i><br>
-                <i class="fa fa-tasks"></i><br>
-                <i class="fa fa-ellipsis-h"></i><br>
-                <i class="fa fa-image"></i><br>
-                <i class="fa fa-file"></i><br>
-                <i class="fa fa-trash"></i>
+               
+                <i id="dragged" class="fa fa-clipboard-list" draggable="true" ondragstart="return dragStart(event)"></i><br>
+                <i id="dragged" class="fa fa-link" draggable="true" ondragstart="return dragStart(event)" ></i><br>
+                <i  id="dragged" class="fa fa-tasks" draggable="true" ondragstart="return dragStart(event)"></i><br>
+                <i  id="dragged" class="fa fa-ellipsis-h" draggable="true" ondragstart="return dragStart(event)"></i><br>
+                <i  id="dragged" class="fa fa-image" draggable="true" ondragstart="return dragStart(event)"></i><br>
+                <i  id="dragged" class="fa fa-file" draggable="true" ondragstart="return dragStart(event)"></i><br>
+                <i  id="dragged" class="fa fa-trash" draggable="true" ondragstart="return dragStart(event)"></i>
 
                 
             </div>
@@ -49,6 +38,7 @@
 
 
     </div>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

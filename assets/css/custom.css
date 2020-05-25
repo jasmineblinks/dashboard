@@ -68,8 +68,9 @@ body {
   background-color: #140c0c;
   margin: 15px;
   color: #f4f4fc;
-  padding: 3px;
-  font-size: 20px;
+  padding: 5px;
+  font-size: 18px;
+  cursor: move;
 }
 
 .container {
