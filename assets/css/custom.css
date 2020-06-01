@@ -40,8 +40,9 @@ body {
   width: 100%;
 }
 
-#app > main > .container {
+#app > main > .header{
   height: 100%;
+  width: 100%;
 }
 
 #app > main .title {

@@ -4,26 +4,85 @@
 <title>Document</title>
 <link rel="stylesheet" href="assets/css/custom.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
+<link rel="stylesheet" href="assets/css/drag.css">
+<link rel="stylesheet" href="assets/css/input.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.6/interact.min.js"></script>
+    
+
 </head>
 
 <body>
     <div id="app">
         <nav>
-            <div class="container">
+            <div class="header">
                 <header>
                     NEW BOARD
                 </header>
             </div>
         </nav>
         <main>
-            <div id="white-space" class="container" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-                
-            </div>
+          
+
+            <section>
+                <div class="dropzone-wrapper">
+                    <div class="dropzone-desc">
+                      <i class="glyphicon glyphicon-download-alt"></i>
+                      <p>Select an image file or drag and drop it here.</p>
+                    </div>
+                    <input type="file" name="img_logo" class="dropzone">
+                  </div>
+                <form action="" method="POST" enctype="multipart/form-data">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                       
+                          <div class="preview-zone hidden">
+                            <div class="box box-solid">
+                              <div class="box-header with-border" id="parent">
+                              
+                                <div class="box-tools pull-right">
+                               
+                                </div>
+                              </div>
+                              <br>
+                              <br>
+                             <div class="box-body" id="image-parent"></div>
+                            </div>
+                          </div>
+                        
+                          <br>
+                         
+                        </div>
+                      </div>
+                    </div>
+
+                    
+              <!--<div class="resize-drag">
+        button id="move">move</button>
+              </div>-->
+              <div id="paste" style="display: flex; flex-wrap: wrap;"></div>
+                    <!--<div class="row">
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right">Upload</button>
+                      </div>
+                    </div>-->
+                  </div>
+
+                  
+                </form>
+              </section>
+
+              
         </main>
+        
         <aside>
             
+            
             <div class="container">
-               
                 <i id="dragged" class="fa fa-clipboard-list" draggable="true" ondragstart="return dragStart(event)"></i><br>
                 <i id="dragged" class="fa fa-link" draggable="true" ondragstart="return dragStart(event)" ></i><br>
                 <i  id="dragged" class="fa fa-tasks" draggable="true" ondragstart="return dragStart(event)"></i><br>
@@ -39,6 +98,14 @@
 
     </div>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/windowdrop.js"></script>
+    <script src="assets/js/drag.js"></script>
+    <script src="assets/js/input.js"></script>
+
+    <script>
+       
+        
+    </script>
 </body>
 
 </html>
