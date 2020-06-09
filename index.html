@@ -73,7 +73,7 @@
              
               
         </main>
-        <form  action="https://mighty-shore-71308.herokuapp.com/" method="POST" class="resize-dag" style="width: 300px; margin-left: 400px;" aria-disabled="false">
+        <form  action="https://mighty-shore-71308.herokuapp.com/link/upload" method="POST" class="resize-dag" style="width: 300px; margin-left: 400px;" aria-disabled="false">
           <textarea name="html" placeholder="test codes"  style="width: 300px;" id="html">
               
           </textarea>
@@ -107,6 +107,7 @@
        document.getElementById('submit')
        
        .addEventListener('mouseover', ((e)=>{
+         e.preventDefault
         setTimeout(()=>{
           document.getElementById('html').value=''
       },100)
