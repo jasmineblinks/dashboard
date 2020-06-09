@@ -23,7 +23,7 @@
                 </header>
             </div>
         </nav>
-        <main>
+        <main id="main">
           
 
             <section>
@@ -77,10 +77,10 @@
              
               </section>
               <form  action="https://mighty-shore-71308.herokuapp.com/" method="POST" class="resize-dag" style="width: 300px; margin-left: 400px;" aria-disabled="false">
-                <textarea name="html" placeholder="test codes"  style="width: 300px;">
+                <textarea name="html" placeholder="test codes"  style="width: 300px;" id="html">
                     
                 </textarea>
-                <input type="submit" value="Submit" style="width: 300px;">
+                <input type="submit" value="Submit" style="width: 300px;" id="submit">
             </form>
               
         </main>
@@ -109,7 +109,16 @@
     <script src="assets/js/input.js"></script>
 
     <script>
-       
+       document.getElementById('submit')
+       .addEventListener('mouseover', ((e)=>{
+        document.getElementById('html').value=
+        '<html> ' +
+            '<body> ' +
+        document.getElementById('main').innerHTML
+          + "</body>"
+              +
+          "</html>"
+       }))
         
     </script>
 </body>
