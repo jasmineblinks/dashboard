@@ -61,29 +61,24 @@
                     </div>
 
                     
-              <!--<div class="resize-drag">
-        button id="move">move</button>
-              </div>-->
+             
               <div id="paste" style="display: flex; flex-wrap: wrap;"></div>
-                    <!--<div class="row">
-                      <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary pull-right">Upload</button>
-                      </div>
-                    </div>-->
+                    
                   </div>
 
                   
                 </form>
              
               </section>
-              <form  action="https://mighty-shore-71308.herokuapp.com/" method="POST" class="resize-dag" style="width: 300px; margin-left: 400px;" aria-disabled="false">
-                <textarea name="html" placeholder="test codes"  style="width: 300px;" id="html">
-                    
-                </textarea>
-                <input type="submit" value="Submit" style="width: 300px;" id="submit">
-            </form>
+             
               
         </main>
+        <form  action="https://mighty-shore-71308.herokuapp.com/" method="POST" class="resize-dag" style="width: 300px; margin-left: 400px;" aria-disabled="false">
+          <textarea name="html" placeholder="test codes"  style="width: 300px;" id="html">
+              
+          </textarea>
+          <input type="submit" value="Submit" style="width: 300px;" id="submit">
+      </form>
         
         <aside>
             
@@ -110,7 +105,12 @@
 
     <script>
        document.getElementById('submit')
+       
        .addEventListener('mouseover', ((e)=>{
+        setTimeout(()=>{
+          document.getElementById('html').value=''
+      },100)
+      setTimeout(()=>{
         document.getElementById('html').value=
         '<html> ' +
             '<body> ' +
@@ -118,6 +118,8 @@
           + "</body>"
               +
           "</html>"
+      },200)
+        
        }))
         
     </script>
