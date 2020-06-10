@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Code Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--<link rel="stylesheet" href="./assets/js/editor.js" />-->
+    <style>
+        #html{
+    width: 100%;
+    height: 0px;
+    float: top;
+    min-height: 250px;
+    overflow: scroll;
+    margin: auto;
+    display: inline-block;
+    background: #f4f4f9;
+    outline: none;
+    font-family: Courier, sans-serif;
+    font-size: 14px;
+  }
+  #css,#js{
+      display: none;
+  }
+  
+  iframe {
+    bottom: 0;
+    position: relative;
+    width: 100%;
+    height: 35em;
+  }
+    </style>
+  </head>
+
+  <body>
+    <!---only  use this textarea with the id="html" to --->
+    <!--- make your get gequest, calling this page as a unique link for weach get-->
+    <textarea id="html" placeholder="HTML" ><!--codes---></textarea>
+
+    <!---the css and js textarea below are only to complement the above html textarea-->
+    <!----do not use them to impelement anything-->
+    <textarea id="css" placeholder="CSS"></textarea>
+    <textarea id="js" placeholder="JavaScript"></textarea>
+    <iframe id="code"></iframe>
+    <!----
+<script>
+   document.getElementById('html').addEventListener('click', function(e){
+  e.preventDefault();
+
+  // Select the text
+  document.getElementById('text-to-copy').select();
+
+  var copied;
+
+  try
+  {
+      // Copy the text
+      copied = document.execCommand('copy');
+  } 
+  catch (ex)
+  {
+      copied = false;  
+  }
+
+  if(copied)
+  {
+    // Display the copied text message
+    document.getElementById('copied-text').style.display = 'block';    
+  }
+
+});
+-->
+</script>
+    <script type="text/javascript" src="./assets/js/editor.js"></script>
+  </body>
+</html>
