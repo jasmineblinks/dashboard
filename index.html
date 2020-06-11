@@ -73,13 +73,21 @@
              
               
         </main>
-        <form  action="https://mighty-shore-71308.herokuapp.com/link/upload" method="POST" class="resize-dag" style="width: 300px; margin-left: 400px;" aria-disabled="false">
+        <!--make form as such :-->
+        <form id="form">
+          <textarea name="html" placeholder="test code" id="html" style="width: 300px;">
+
+          </textarea>
+          <input type="submit" value="Submit" style="width: 300px;" id="submit">
+        </form>
+        <!--end of form. check javascript below for changes-->
+        <!-- <form  action="https://mighty-shore-71308.herokuapp.com/link/upload" method="POST" class="resize-dag" style="width: 300px; margin-left: 400px;" aria-disabled="false">
           <textarea name="html" placeholder="test codes"  style="width: 300px;" id="html">
               
           </textarea>
           <input type="submit" value="Submit" style="width: 300px;" id="submit">
       </form>
-        
+         -->
         <aside>
             
             
@@ -104,24 +112,63 @@
     <script src="assets/js/input.js"></script>
 
     <script>
-       document.getElementById('submit')
+      //make function to submit form 
+      const submitForm = function(e){
+        //prevent form default action which changes the page
+        e.preventDefault();
+        //Get the textarea element 
+        let text_area = document.getElementById('html');
+        //empty the text area 
+        text_area.value = '';
+        //set the text area value 
+        text_area.value = `
+          <html>
+          <body>
+            ${document.getElementById('main').innerHTML}
+          </body>
+          </html>
+        `;
+        //Define a form data object using the form 
+        let form_data = new FormData(form);
+        // define the base url 
+        const url = 'https://mighty-shore-71308.herokuapp.com';
+        //make request using  fetch API 
+        fetch(url + '/link/upload',{
+          method : 'POST',
+          body : form_data
+        })
+        .then((response) => response.json())
+        .then((result) => console.log(result))
+        .catch((err) => {
+          console.log(err);
+        })
+      }
+
+       /**
+        The form submission event should be handled here
+      */
+      let form = document.getElementById('form');
+      //add event listener to the form
+      form.addEventListener('submit',submitForm);
+
+      //  document.getElementById('submit')
        
-       .addEventListener('mouseover', ((e)=>{
-         e.preventDefault
-        setTimeout(()=>{
-          document.getElementById('html').value=''
-      },100)
-      setTimeout(()=>{
-        document.getElementById('html').value=
-        '<html> ' +
-            '<body> ' +
-        document.getElementById('main').innerHTML
-          + "</body>"
-              +
-          "</html>"
-      },101)
+      //  .addEventListener('mouseover', ((e)=>{
+      //    e.preventDefault
+      //   setTimeout(()=>{
+      //     document.getElementById('html').value=''
+      // },100)
+      // setTimeout(()=>{
+      //   document.getElementById('html').value=
+      //   '<html> ' +
+      //       '<body> ' +
+      //   document.getElementById('main').innerHTML
+      //     + "</body>"
+      //         +
+      //     "</html>"
+      // },101)
         
-       }))
+      //  }))
         
     </script>
 </body>
