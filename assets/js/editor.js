@@ -18,5 +18,25 @@ function compile() {
       code.close();
     };
   }
-  
-  compile();
+
+  window.addEventListener('load',(e) => {
+    let url = window.location.href;
+    let htmlField = document.getElementById('html');
+    let link = decodeURI(url.split('=')[1]);
+    console.log(link);
+    const api_url = 'https://mighty-shore-71308.herokuapp.com/';
+    fetch(api_url + `link/${link}`,{
+      method : 'GET'
+    })
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      htmlField.value = response.html
+      compile();
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    // getHTML();
+  });
+  // compile();
