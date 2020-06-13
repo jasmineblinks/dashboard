@@ -28,6 +28,9 @@ function readFile(input) {
   $(".dropzone").change(function() {
     readFile(this);
   });
+  $(".dropzone2").change(function() {
+    readFile(this);
+  });
   
   $('.dropzone-wrapper').on('dragover', function(e) {
     e.preventDefault();

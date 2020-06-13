@@ -1,3 +1,5 @@
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -25,12 +27,22 @@
         </nav>
         <main id="main">
           
+          
+
 
             <section>
+
+              
+            
+              
+                
+              
+              
+
                 <div class="dropzone-wrapper">
                     <div class="dropzone-desc">
-                      <i class="glyphicon glyphicon-download-alt"></i>
-                      <p>Select an image file or drag and drop it here.</p>
+                      <i class="fa fa-image" style="font-size: 200px;"></i>
+                      <p> DRAG AND DROP YOUR IMAGE HERE OR SELECT</p>
                     </div>
                     <input type="file" name="img_logo" class="dropzone">
                   </div>
@@ -63,65 +75,114 @@
                     
              
               <div id="paste" style="display: flex; flex-wrap: wrap;"></div>
-                    
+                   
                   </div>
 
                   
                 </form>
-             
+                
               </section>
              
-              
+           
+
+
         </main>
-        <form  action="https://mighty-shore-71308.herokuapp.com/link/upload" method="POST" class="resize-dag" style="width: 300px; margin-left: 400px;" aria-disabled="false">
+        
+        <!-- <form  action="https://mighty-shore-71308.herokuapp.com/link/upload" method="POST" class="resize-dag" style="width: 300px; margin-left: 400px;" aria-disabled="false">
           <textarea name="html" placeholder="test codes"  style="width: 300px;" id="html">
               
           </textarea>
           <input type="submit" value="Submit" style="width: 300px;" id="submit">
       </form>
-        
+         -->
+
+  
+    
+         
         <aside>
+          <!--make form as such :-->
+        
+        <!--end of form. check javascript below for changes-->
+          <!---pls do not change the position of this two elements-->
+          <i  id="upload" class="fa fa-image" draggable="true" style="margin-left: 30px;">      
+          </i>
+          <input type="file" name="img_logo" class="dropzone2" style="margin-top: -160px;" placeholder="Select Image">
+      <!---the end of the element not to change-->
             
             
             <div class="container">
                 <i id="dragged" class="fa fa-clipboard-list" draggable="true" ondragstart="return dragStart(event)"></i><br>
-                <i id="dragged" class="fa fa-link" draggable="true" ondragstart="return dragStart(event)" ></i><br>
+                <i id="link" class="fa fa-link" draggable="true" ondragstart="return dragStart(event)" ></i><br>
                 <i  id="dragged" class="fa fa-tasks" draggable="true" ondragstart="return dragStart(event)"></i><br>
                 <i  id="dragged" class="fa fa-ellipsis-h" draggable="true" ondragstart="return dragStart(event)"></i><br>
-                <i  id="dragged" class="fa fa-image" draggable="true" ondragstart="return dragStart(event)"></i><br>
+                <i  id="upload" class="fa fa-image" draggable="true" ondragstart="return dragStart(event)">
+                  
+                  
+                </i><br>
                 <i  id="dragged" class="fa fa-file" draggable="true" ondragstart="return dragStart(event)"></i><br>
                 <i  id="dragged" class="fa fa-trash" draggable="true" ondragstart="return dragStart(event)"></i>
+               
 
+                <form id="form">
+                  <textarea name="html" placeholder="test code" id="html" style="width: 0px; height: 0px;">
+        
+                  </textarea>
+                  <input type="submit" value="Submit" id="submit">
+                </form>
                 
             </div>
+            
         </aside>
-
-
+        
+       
     </div>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/windowdrop.js"></script>
     <script src="assets/js/drag.js"></script>
     <script src="assets/js/input.js"></script>
+    <script src="assets/js/links.js"></script>
 
     <script>
-       document.getElementById('submit')
-       
-       .addEventListener('mouseover', ((e)=>{
-         e.preventDefault
-        setTimeout(()=>{
-          document.getElementById('html').value=''
-      },100)
-      setTimeout(()=>{
-        document.getElementById('html').value=
-        '<html> ' +
-            '<body> ' +
-        document.getElementById('main').innerHTML
-          + "</body>"
-              +
-          "</html>"
-      },101)
-        
-       }))
+      //make function to submit form 
+      const submitForm = function(e){
+        //prevent form default action which changes the page
+        e.preventDefault();
+        //Get the textarea element 
+        let text_area = document.getElementById('html');
+        //empty the text area 
+        text_area.value = '';
+        //set the text area value 
+        text_area.value = `
+          <html>
+          <body>
+            ${document.getElementById('main').innerHTML}
+          </body>
+          </html>
+        `;
+        //Define a form data object using the form 
+        let form_data = new FormData(form);
+        // define the base url 
+        const url = 'https://mighty-shore-71308.herokuapp.com';
+        //make request using  fetch API 
+        fetch(url + '/link/upload',{
+          method : 'POST',
+          body : form_data
+        })
+        .then((response) => response.json())
+        .then((result) => console.log(result))
+        .catch((err) => {
+          console.log(err);
+        })
+      }
+
+       /**
+        The form submission event should be handled here
+      */
+      let form = document.getElementById('form');
+      //add event listener to the form
+      form.addEventListener('submit',submitForm);
+
+      
         
     </script>
 </body>

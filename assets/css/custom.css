@@ -51,7 +51,7 @@ body {
 
 #app > aside {
   height: 100%;
-  width: 60px;
+  width: 100px;
   position: fixed;
   top: 80px;
   left: 0;
@@ -63,8 +63,10 @@ body {
 #app > aside > .container {
   height: 100%;
 }
-
-#app > aside > .container > .fa {
+#link{
+  cursor: pointer !important;
+}
+#upload,#app > aside > .container > .fa {
   background-color: #140c0c;
   margin: 15px;
   color: #f4f4fc;

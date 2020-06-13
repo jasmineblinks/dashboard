@@ -5,9 +5,55 @@
     border-radius: 1px;
     padding: 5px;
     touch-action: none;
-  border: 1px dotted black;
-    width: 300px;
+  
+   /* width: 300px;*/
   
     /* This makes things *much* easier */
     box-sizing: border-box;
   }
+  .resize-draw{
+    border: 1px dotted black;
+    padding: 6px;
+  }
+  .ul{
+    background-color: rgb(247, 247, 247);
+    width: 150px;
+    transform: translateY(-200px) !important;
+   display: none;
+    margin-left: 20px !important;
+    cursor: pointer;
+   
+  }
+  .resize-draw:hover{
+    box-shadow: 5px 10px rgb(247, 247, 247);
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .ul>div{
+    color: black;
+    list-style: none;
+    margin: 5px;
+    padding: 10px;
+    
+    
+  }
+  .ul>div:hover{
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    font-weight: bolder;
+  }
+
+
+  .resize-link{
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    
+  }
+
+ 
