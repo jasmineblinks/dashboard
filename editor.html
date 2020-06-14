@@ -6,17 +6,17 @@
     <!--<link rel="stylesheet" href="./assets/js/editor.js" />-->
     <style>
         #html{
-    width: 100%;
+    width: 0%;
     height: 0px;
-    float: top;
-    min-height: 250px;
-    overflow: scroll;
+    /* float: top; */
+    /*min-height: 250px;*/
+    /*overflow: scroll;*/
     margin: auto;
-    display: inline-block;
+    display: none;
     background: #f4f4f9;
     outline: none;
     font-family: Courier, sans-serif;
-    font-size: 14px;
+    font-size: 0px;
   }
   #css,#js{
       display: none;
@@ -26,7 +26,7 @@
     bottom: 0;
     position: relative;
     width: 100%;
-    height: 35em;
+   height: 35em;
   }
     </style>
   </head>
@@ -38,7 +38,224 @@
 
     <!---the css and js textarea below are only to complement the above html textarea-->
     <!----do not use them to impelement anything-->
-    <textarea id="css" placeholder="CSS"></textarea>
+    <textarea id="css" placeholder="CSS">
+
+      .container {
+        padding: 50px 10%;
+      }
+      
+      .box {
+        position: relative;
+       
+        width: 100%;
+      }
+      
+      .box-header {
+        color: #444;
+        display: block;
+        padding: 10px;
+        position: relative;
+       
+        margin-bottom: 10px;
+      }
+      
+      .box-tools {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+      }
+      
+      .dropzone-wrapper {
+       
+        color: #92b0b3;
+        position: relative;
+        height: 150px;
+      }
+      
+      .dropzone-desc {
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        width: 40%;
+        top: 50px;
+        font-size: 16px;
+      }
+      
+      .dropzone2,.dropzone,
+      .dropzone:focus {
+        position: absolute;
+        outline: none !important;
+        width: 100%;
+        height: 150px;
+        cursor: pointer;
+        opacity: 0;
+      }
+      .preview-zone {
+        text-align: center;
+      }
+      
+      .preview-zone .box {
+        box-shadow: none;
+        border-radius: 0;
+        margin-bottom: 0;
+      }
+  
+      
+
+      .resize-drag {
+        color: white;
+        font-size: 20px;
+        font-family: sans-serif;
+        border-radius: 1px;
+        padding: 5px;
+        touch-action: none;
+      
+       /* width: 300px;*/
+      
+        /* This makes things *much* easier */
+        box-sizing: border-box;
+      }
+      .resize-draw{
+        border: 1px dotted black;
+        padding: 6px;
+      }
+      .ul{
+        background-color: rgb(247, 247, 247);
+        width: 150px;
+        transform: translateY(-200px) !important;
+       display: none;
+        margin-left: 20px !important;
+        cursor: pointer;
+       
+      }
+      .resize-draw:hover{
+        box-shadow: 5px 10px rgb(247, 247, 247);
+        border: 1px solid;
+        padding: 5px;
+        border-radius: 10px;
+      }
+    
+      .ul>div{
+        color: black;
+        list-style: none;
+        margin: 5px;
+        padding: 10px;
+        
+        
+      }
+      .ul>div:hover{
+        color: white;
+        background-color: black;
+        border: 1px solid white;
+        font-weight: bolder;
+      }
+    
+    
+      .resize-link{
+        width: 300px;
+        height: 100px;
+        margin: auto;
+        text-align: center;
+        background-color: white;
+        
+      }
+    
+ 
+      
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+      }
+      
+      #app {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+        background: #dcdcdc;
+      }
+      
+      #app > nav {
+        height: 100px;
+      }
+      
+      #app > nav > .container {
+        height: 100%;
+        width: 100%;
+      }
+      
+      #app > nav header {
+        background-color: #f5f5f5;
+        width: calc(100% - 1px);
+        position: fixed;
+        z-index: 1;
+        padding: 28px;
+        font-size: 20px;
+        font-weight: bolder;
+        text-align: center;
+      }
+      
+      #app > main {
+        height: calc(100% - 250px);
+        width: 100%;
+      }
+      
+      #app > main > .container {
+        height: 100%;
+      }
+      
+      #app > main .title {
+        font-size: 50px;
+        font-weight: 600;
+      }
+      
+      #app > aside {
+        height: 100%;
+        width: 100px;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        background-color: #e8e9eb;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      
+      #app > aside > .container {
+        height: 100%;
+      }
+      #link{
+        cursor: pointer !important;
+      }
+      #upload,#app > aside > .container > .fa {
+        background-color: #140c0c;
+        margin: 15px;
+        color: #f4f4fc;
+        padding: 5px;
+        font-size: 18px;
+        cursor: move;
+      }
+      
+      .container {
+        margin: auto;
+      }
+      
+      @media screen and (min-width: 1200px) {
+        .container {
+          width: 900px;
+        }
+      }
+      /*# sourceMappingURL=custom.css.map */
+
+
+
+    </textarea>
     <textarea id="js" placeholder="JavaScript"></textarea>
     <iframe id="code"></iframe>
     <!----
