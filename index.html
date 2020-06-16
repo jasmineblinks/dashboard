@@ -1,5 +1,4 @@
 
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -22,6 +21,7 @@
             <div class="header">
                 <header>
                     NEW BOARD
+                    <div id ="showLink"></div>
                 </header>
             </div>
         </nav>
@@ -96,7 +96,6 @@
       </form>
          -->
 
-  
     
          
         <aside>
@@ -124,11 +123,12 @@
                
 
                 <form id="form">
-                  <textarea name="html" placeholder="test code" id="html" style="width: 0px; height: 0px;">
+                  <textarea name="html" placeholder="test code" id="html" style="width: 0px; height: 0px; display: block;">
         
                   </textarea>
                   <input type="submit" value="Submit" id="submit">
                 </form>
+                
                 
             </div>
             
@@ -140,7 +140,7 @@
     <script src="assets/js/windowdrop.js"></script>
     <script src="assets/js/drag.js"></script>
     <script src="assets/js/input.js"></script>
-    <script src="assets/js/links.js"></script>
+  
 
     <script>
       //make function to submit form 
@@ -159,6 +159,7 @@
           </body>
           </html>
         `;
+        
         //Define a form data object using the form 
         let form_data = new FormData(form);
         // define the base url 
@@ -169,7 +170,7 @@
           body : form_data
         })
         .then((response) => response.json())
-        .then((result) => console.log(result))
+        .then((result) => document.getElementById('showLink').innerHTML=result.link)
         .catch((err) => {
           console.log(err);
         })
@@ -180,9 +181,12 @@
       */
       let form = document.getElementById('form');
       //add event listener to the form
+     // form.addEventListener('mouseover',)
+    
+
       form.addEventListener('submit',submitForm);
 
-      
+      alert('hello') 
         
     </script>
 </body>

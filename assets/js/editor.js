@@ -17,7 +17,7 @@ setTimeout(()=>{
         "</script>"
     );
     code.close();
-}, 1000)
+}, 100)
 
 
 }
