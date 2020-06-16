@@ -190,8 +190,9 @@ margin-bottom: auto;
     }
    }
 
-   @media screen and (max-width: 352px) {
-  .btn> button{
-      max-width: 60px;
+   @media screen and (max-width: 362px) {
+  button{
+      width: 60px;
+      padding: 0px;
    }
    }
