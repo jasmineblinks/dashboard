@@ -7,6 +7,24 @@ div, .head, header{
 #heading>div{
     font-family: Sofia;
 }
+#searchBox{
+    padding: 10px;
+   width: 100vw;
+   display: grid;
+   grid-template-columns: 1fr;
+   align-items: center;
+   justify-items: center;
+}
+#searchBox>input{
+    width: 60vw;
+    padding: 10px;
+    margin: none;
+    border: none;
+}
+#searchBox>input:focus{
+    border: none;
+    margin: none;
+}
 header{
 width: 100%;
 height: 200px;
@@ -14,7 +32,7 @@ background: linear-gradient(176.03deg, #2ADDD2 8.74%, rgba(196, 196, 196, 0) 165
 
 }
 body{
-    background-color: whitesmoke;
+    background-color: #ddd;
 }
 #heading{
 
